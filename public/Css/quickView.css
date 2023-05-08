@@ -1,0 +1,124 @@
+.quick-view-product {
+    width: 90%;
+    max-width: 100rem;
+    height: 70%;
+    max-height: 50rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 100rem 100rem rgba(0, 0, 0, 0.822);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(18.5px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.quick-view-product.active{
+    display: flex;
+}
+
+.quick-view-product .images-product {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    column-gap: 2rem;
+    background-color: var(--i);
+}
+
+.quick-view-product .images-product .display-image {
+    height: 70%;
+    overflow: hidden;
+}
+.quick-view-product .images-product .display-image img {
+    width: 100%;
+    border-bottom-left-radius: 1rem;
+}
+
+.quick-view-product .images-product .some-image {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.quick-view-product .images-product .some-image img {
+    width: 14rem;
+    height: 100%;
+    margin-bottom: 2.5rem;
+    background-color: var(--color-3);
+    border-radius: 1rem;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.quick-view-product .images-product .some-image img:hover {
+    transform: scale(1.03);
+}
+
+.quick-view-product .details-product {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.quick-view-product .details-product > p:nth-of-type(1) {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+
+.quick-view-product .details-product > p:nth-of-type(2) span {
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+
+.quick-view-product .details-product button {
+    background-color: transparent;
+    border: 1px solid var(--color-white-2);
+    padding: 1rem 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top:2rem;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 50%);
+    transition: all 0.1s linear;
+    background-color: rgb(161, 126, 255);
+    cursor: pointer;
+}
+
+
+.quick-view-product .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: rgb(248, 71, 71);
+    border-bottom-right-radius: 0.5rem;
+    cursor: pointer;
+    z-index: 12;
+}
+
+.quick-view-product .close img{
+    width: 2.5rem;
+}

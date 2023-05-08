@@ -1,0 +1,50 @@
+body {
+    background-color: var(--color-dark-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    color: var(--color-white-1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+form input {
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: var(--color-blue-1);
+    color: var(--color-white-1);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}

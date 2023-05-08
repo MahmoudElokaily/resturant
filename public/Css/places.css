@@ -1,0 +1,78 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+.container>p:nth-of-type(1){
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+select{
+    width: 20rem;
+    height: 3rem;
+    outline: none;
+    border: 1px solid var(--color-white-2);
+    background-color: var(--color-white-1);
+}
+
+.all-results{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 5rem;
+    padding-bottom: 5rem;
+}
+
+.all-results>div{
+    height: 40rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color:var(--color-dark-1);
+    color: var(--color-white-1);
+    font-size: 1.8rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.all-results>div .img{
+    height: 65%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.all-results>div .img img{
+    height: 100%;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.all-results>div .img img:hover{
+    transform: scale(1.1);
+}
+
+.all-results>div>p:nth-of-type(1){
+    font-size: 2rem;
+    font-weight: 600;
+}
+.all-results>div .btn{
+    padding-bottom: 1rem;
+}
+
+.all-results>div .btn button{
+    background-color:var(--color-white-1) ;
+    outline: none;
+    border: 1px solid var(--color-white-2);
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-dark-1);
+    cursor: pointer;
+}

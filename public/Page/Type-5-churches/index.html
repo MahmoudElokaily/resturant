@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="rtl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../Css/main.css" />
+        <link rel="stylesheet" href="../../Css/nav.css" />
+        <link rel="stylesheet" href="../../Css/places.css" />
+        <link rel="stylesheet" href="../../Css/quickView.css" />
+        <title>كنائس</title>
+    </head>
+    <body>
+        <div class="container">
+            <p>كنائس</p>
+            <p id="numOfResult"></p>
+            <select name="" id="select-place">
+                <option value="all" selected>الكل</option>
+                <option value="الدقي">الدقي</option>
+                <option value="الهرم">الهرم</option>
+                <option value="المهندسين">المهندسين</option>
+                <option value="السادس من اكتوبر">السادس من اكتوبر</option>
+                <option value="فيصل">فيصل</option>
+                <option value="عمرانيه">عمرانيه</option>
+            </select>
+            <div class="all-results"></div>
+        </div>
+        <!-- ---------------------------------------------- -->
+        <div class="quick-view-product">
+            <div class="close">
+                <img src="../../Image/icons8-close-50.png" alt="close" />
+            </div>
+            <div class="images-product">
+                <div class="display-image">
+                    <img src="../../Image/img-2-1.jpg" alt="main_image" />
+                </div>
+                <div class="some-image">
+                    <img
+                        src="../../Image/img-2-4.jpg"
+                        alt=""
+                        class="img_Exchange"
+                    />
+                    <img
+                        src="../../Image/img-2-3.jpg"
+                        alt=""
+                        class="img_Exchange"
+                    />
+                    <img
+                        src="../../Image/img-2-2.jpg"
+                        alt=""
+                        class="img_Exchange"
+                    />
+                </div>
+            </div>
+            <div class="details-product">
+                <p>${place.name}</p>
+                <p>
+                    ${place.description} <br />
+                    <br />
+                    <span>تفاصيل الخدمه</span> <br />
+                    التكلفه : ${place.price} <br />
+                    الموقع : ${place.place} <br />
+                    خدمه ضيافه : ${place.hospitality} <br />
+                    مخصصه للرجال والسيدات : ${place.men_And_Women} <br />
+                    السعه الكليه : ${place.capacity} <br />
+                </p>
+                <button id="checkBtn">حجز</button>
+            </div>
+        </div>
+        <!-- ---------------------------------------------- -->
+        <div class="checkOut"></div>
+
+        <script src="js.js"></script>
+        <script src="../../Js/createMainPage.js"></script>
+        <script src="../../Js/viewAvailablePlaces.js"></script>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+body{
+    background-color: var(--color-dark-1);
+    color: var(--color-white-1);
+}
+
+body>p:nth-of-type(1){
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+table{
+    margin: auto;
+}
+
+table th{
+    font-size: 1.9rem;
+    background-color: black;
+    padding: 0 1.5rem;
+}
+
+table td{
+    padding: 1.5rem 2rem;
+    font-size: 1.5rem;
+    max-width: 12rem;
+    text-align: center;
+}
+
+table td p{
+    height: 8rem;
+    overflow-x: hidden;
+}
+
+td img{
+    width: 100%;
+}
+
+td.btn{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 0.8rem;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: rgba(255, 0, 0, 0.692);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 1px solid rgb(150, 124, 124);
+}
+
+table td button{
+    outline: none;
+    border:none;
+    background-color: var(--color-blue-1);
+    color: var(--color-white-1);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+caption{
+    font-size: 2rem;
+    padding: 1.5rem;
+    font-weight: 600;
+    color: rgb(248, 88, 88);
+}
+
+hr{
+    margin: auto;
+    width: 80%;
+}
+
+table input{
+    color: white;
+    width: 10rem;
+    outline: none;
+    border:none;
+    padding: 1rem 0;
+    background-color: transparent;
+}
+
+select{
+    outline: none;
+    border: none;
+    width: 100%;
+}
+
+tfoot{
+    background-color: #282c35be;
+}

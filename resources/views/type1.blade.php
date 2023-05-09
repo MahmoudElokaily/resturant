@@ -16,16 +16,7 @@
     <p>{{$category->name}}</p>
     <!-- هنا هيبقا عدد القاعات المعروضه في الصفحه لو المتخزنه في الباك اند -->
     <p id="numOfResult"></p>
-    <!-- -------------------------------------- -->
-    <select name="" id="select-place">
-        <option value="all" selected>الكل</option>
-        <option value="الدقي">الدقي</option>
-        <option value="الهرم">الهرم</option>
-        <option value="المهندسين">المهندسين</option>
-        <option value="السادس من اكتوبر">السادس من اكتوبر</option>
-        <option value="فيصل">فيصل</option>
-        <option value="عمرانيه">عمرانيه</option>
-    </select>
+
     <div class="all-results">
         @foreach($category->products as $product)
         <div>

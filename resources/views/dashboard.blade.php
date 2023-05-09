@@ -65,6 +65,7 @@
     </thead>
     <tbody>
     @foreach($products as $product)
+        @isset($product)
         <tr>
             <td>{{$product->name}}</td>
             <td>{{$product->price}}</td>
@@ -90,12 +91,17 @@
     {{--        </td><td>--}}
     {{--            <input type="file" name="" id="">--}}
     {{--        </td>--}}
-            <td>{{$product->category->name}}</td>
+            @if(isset($product->category->name) && $product->category->name)
+                <td>{{$product->category->name}}</td>
+            @else
+                <td>لا يوجد</td>
+            @endif
             <td class="btn">
                 <a href="{{route('delete-product' , $product->id)}}">حذف</a>
                 <a class="editBtn" href="{{route('edit-product' , $product->id)}}">تعديل</a>
             </td>
         </tr>
+        @endisset
     @endforeach
     </tbody>
     <tfoot>
@@ -144,7 +150,9 @@
             <td>
                 <select name="category">
                     @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        @isset($category)
+                            <option value="{{$category->id}}">{{$category->name}}</option>
+                        @endisset
                     @endforeach
                 </select>
             </td>

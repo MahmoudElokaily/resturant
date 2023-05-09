@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('order', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->softDeletes();
             $table->string('name');
             $table->string('number');
             $table->string('place');

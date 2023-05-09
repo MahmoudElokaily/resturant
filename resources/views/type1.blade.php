@@ -35,7 +35,8 @@
             <p id="name">{{$product->name}}</p>
             <p id="price">{{$product->price}} جنيه</p>
             <div class="btn">
-                <a href="{{route('booking-product' , $product->id)}}" id="details" >تفاصيل</a>
+                <a href="{{route('details' , $product->id)}}" id="details" >تفاصيل</a>
+                <a href="{{route('booking-product' , $product->id)}}">حجز</a>
             </div>
         </div>
         @endforeach

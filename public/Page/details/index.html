@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Css/main.css">
+    <link rel="stylesheet" href="../../Css/nav.css">
+    <link rel="stylesheet" href="../../Css/quickView.css">
+    <link rel="stylesheet" href="style.css">
+    <title>التفاصيل</title>
+</head>
+<body>
+    <div class="quick-view-product">
+        <div class="images-product">
+            <div class="display-image">
+                <img src="../../Image/img-2-1.jpg" alt="main_image" />
+            </div>
+            <div class="some-image">
+                <img
+                    src="../../Image/img-2-4.jpg"
+                    alt=""
+                    class="img_Exchange"
+                />
+                <img
+                    src="../../Image/img-2-3.jpg"
+                    alt=""
+                    class="img_Exchange"
+                />
+                <img
+                    src="../../Image/img-2-2.jpg"
+                    alt=""
+                    class="img_Exchange"
+                />
+            </div>
+        </div>
+        <div class="details-product">
+            <p>${place.name}</p>
+            <p>
+                ${place.description} <br> <br>
+                <span>تفاصيل الخدمه</span> <br>
+                التكلفه : ${place.price} <br>
+                الموقع : ${place.place} <br>
+                خدمه ضيافه : ${place.hospitality} <br>
+                مخصصه للرجال والسيدات : ${place.men_And_Women} <br>
+                السعه الكليه : ${place.capacity} <br>
+            </p>
+            <a href="../Booking/index.html">حجز</a>
+        </div>
+    </div>
+
+    <script src="../../Js/createMainPage.js"></script>
+</body>
+</html>

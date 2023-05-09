@@ -132,15 +132,15 @@
             <td>
                 <input type="file" name="image1" required/>
             </td>
-{{--            <td>--}}
-{{--                <input type="file" name="image2" required/>--}}
-{{--            </td>--}}
-{{--            <td>--}}
-{{--                <input type="file" name="image3" required/>--}}
-{{--            </td>--}}
-{{--            <td>--}}
-{{--                <input type="file" name="image4" required/>--}}
-{{--            </td>--}}
+            <td>
+                <input type="file" name="image2" required/>
+            </td>
+            <td>
+                <input type="file" name="image3" required/>
+            </td>
+            <td>
+                <input type="file" name="image4" required/>
+            </td>
             <td>
                 <select name="category">
                     @foreach($categories as $category)

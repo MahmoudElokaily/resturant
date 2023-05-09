@@ -51,9 +51,9 @@ class QuaitController extends Controller
 
     public function storeProduct(Request $request){
         $file_name1 = $this->saveImage($request->image1, 'Photos/products');
-//        $file_name2 = $this->saveImage($request->image2, 'Photos/products');
-//        $file_name3 = $this->saveImage($request->image3, 'Photos/products');
-//        $file_name4 = $this->saveImage($request->image4, 'Photos/products');
+        $file_name2 = $this->saveImage($request->image2, 'Photos/products');
+        $file_name3 = $this->saveImage($request->image3, 'Photos/products');
+        $file_name4 = $this->saveImage($request->image4, 'Photos/products');
         $product = Product::create([
             'name'      => $request->name,
             'price'     => $request->price,
@@ -64,9 +64,9 @@ class QuaitController extends Controller
             'category_id' => $request->category,
             'capacity'  => $request->capacity,
             'image1'    => $file_name1,
-//            'image2'    => $file_name2,
-//            'image3'    => $file_name3,
-//            'image4'    => $file_name4,
+            'image2'    => $file_name2,
+            'image3'    => $file_name3,
+            'image4'    => $file_name4,
         ]);
         if ($product){
             return redirect()->back()->with('success', 'Product saved successfully.');
@@ -179,7 +179,10 @@ class QuaitController extends Controller
     }
     public function updateProduct(Request $request){
         $product = Product::findOrFail($request->id);
-        $file_name = $this->saveImage($request->image1, 'Photos/services');
+        $file_name1 = $this->saveImage($request->image1, 'Photos/services');
+        $file_name2 = $this->saveImage($request->image2, 'Photos/products');
+        $file_name3 = $this->saveImage($request->image3, 'Photos/products');
+        $file_name4 = $this->saveImage($request->image4, 'Photos/products');
 
         $product->update([
             'name'      => $request->name,
@@ -190,10 +193,10 @@ class QuaitController extends Controller
             'menWwoman' => $request->men,
             'category_id' => $request->category,
             'capacity'  => $request->capacity,
-            'image1'    => $file_name,
-//            'image2'    => $file_name2,
-//            'image3'    => $file_name3,
-//            'image4'    => $file_name4,
+            'image1'    => $file_name1,
+            'image2'    => $file_name2,
+            'image3'    => $file_name3,
+            'image4'    => $file_name4,
         ]);
         return to_route('dashboard');
     }
@@ -216,5 +219,13 @@ class QuaitController extends Controller
         ]);
         return to_route('dashboard');
 
+    }
+
+    public function details($id){
+        $product = Product::findOrFail($id);
+        $data = [
+            'product'  => $product,
+        ];
+        return view('details' , $data);
     }
 }

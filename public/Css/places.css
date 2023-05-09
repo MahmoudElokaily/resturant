@@ -62,17 +62,21 @@ select{
 }
 .all-results>div .btn{
     padding-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 
-.all-results>div .btn button{
+.all-results>div .btn a{
+    text-decoration: none;
     background-color:var(--color-white-1) ;
-    outline: none;
     border: 1px solid var(--color-white-2);
     border-radius: 0.5rem;
-    padding: 1rem 1.5rem;
-    width: 8rem;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--color-dark-1);
-    cursor: pointer;
+    width: 8rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

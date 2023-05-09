@@ -33,4 +33,6 @@ Route::get("edit-product/{id}" , [QuaitController::class , 'editProduct'])->name
 Route::Post("update-product" , [QuaitController::class , 'updateProduct'])->name("update-product");
 Route::get("edit-service/{id}" , [QuaitController::class , 'editService'])->name("edit-service");
 Route::Post("update-service/" , [QuaitController::class , 'updateService'])->name("update-service");
+Route::get("details/{id}" , [QuaitController::class , 'details'])->name("details");
+
 

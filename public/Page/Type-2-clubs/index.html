@@ -24,55 +24,22 @@
                 <option value="فيصل">فيصل</option>
                 <option value="عمرانيه">عمرانيه</option>
             </select>
-            <div class="all-results"></div>
-        </div>
-        <!-- ---------------------------------------------- -->
-        <div class="quick-view-product">
-            <div class="close">
-                <img src="../../Image/icons8-close-50.png" alt="close" />
-            </div>
-            <div class="images-product">
-                <div class="display-image">
-                    <img src="../../Image/img-2-1.jpg" alt="main_image" />
-                </div>
-                <div class="some-image">
-                    <img
-                        src="../../Image/img-2-4.jpg"
-                        alt=""
-                        class="img_Exchange"
-                    />
-                    <img
-                        src="../../Image/img-2-3.jpg"
-                        alt=""
-                        class="img_Exchange"
-                    />
-                    <img
-                        src="../../Image/img-2-2.jpg"
-                        alt=""
-                        class="img_Exchange"
-                    />
+            <div class="all-results">
+                <div>
+                    <div class="img">
+                        <img src="${place.img_1}" alt="" />
+                    </div>
+                    <p id="name">${place.name}</p>
+                    <p id="price">${place.price} جنيه</p>
+                    <div class="btn">
+                        <a href="../details/index.html">تفاصيل</a>
+                        <a href="../Booking/index.html">حجز</a>
+                    </div>
                 </div>
             </div>
-            <div class="details-product">
-                <p>${place.name}</p>
-                <p>
-                    ${place.description} <br />
-                    <br />
-                    <span>تفاصيل الخدمه</span> <br />
-                    التكلفه : ${place.price} <br />
-                    الموقع : ${place.place} <br />
-                    خدمه ضيافه : ${place.hospitality} <br />
-                    مخصصه للرجال والسيدات : ${place.men_And_Women} <br />
-                    السعه الكليه : ${place.capacity} <br />
-                </p>
-                <button id="checkBtn">حجز</button>
-            </div>
         </div>
-        <!-- ---------------------------------------------- -->
-        <div class="checkOut"></div>
 
         <script src="js.js"></script>
         <script src="../../Js/createMainPage.js"></script>
-        <script src="../../Js/viewAvailablePlaces.js"></script>
     </body>
 </html>

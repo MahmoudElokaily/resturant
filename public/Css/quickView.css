@@ -7,15 +7,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
     background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 0 100rem 100rem rgba(0, 0, 0, 0.822);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(18.5px);
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    display: none;
-    /* display: flex; */
+    display: flex;
     flex-wrap: wrap;
     overflow: hidden;
 }
@@ -88,8 +86,8 @@
 }
 
 
-.quick-view-product .details-product button {
-    background-color: transparent;
+.quick-view-product .details-product a {
+    text-decoration: none;
     border: 1px solid var(--color-white-2);
     padding: 1rem 2.5rem;
     border-radius: 1rem;
@@ -99,26 +97,5 @@
     position: absolute;
     right: 50%;
     transform: translate(50%, 50%);
-    transition: all 0.1s linear;
     background-color: rgb(161, 126, 255);
-    cursor: pointer;
-}
-
-
-.quick-view-product .close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: rgb(248, 71, 71);
-    border-bottom-right-radius: 0.5rem;
-    cursor: pointer;
-    z-index: 12;
-}
-
-.quick-view-product .close img{
-    width: 2.5rem;
 }

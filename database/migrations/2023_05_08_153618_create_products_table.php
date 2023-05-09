@@ -22,10 +22,10 @@ return new class extends Migration
             $table->string('menWwoman');
             $table->string('capacity');
             $table->string('category_id');
-            $table->string('image1')->nullable();
-            $table->string('image2')->nullable();
-            $table->string('image3')->nullable();
-            $table->string('image4')->nullable();
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
+            $table->string('image4');
         });
     }
 

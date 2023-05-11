@@ -44,6 +44,34 @@
 <hr />
 <table cellspacing="0">
     <caption>
+        حجوزات الخدمات
+    </caption>
+    <thead>
+    <tr>
+        <th>الاسم</th>
+        <th>السعر</th>
+        <th>الدفع</th>
+        <th>التاريخ</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($serviceOrder as $order)
+        <tr>
+            <td>{{$order->name}}</td>
+            <td>0{{$order->price}}</td>
+            <td>{{$order->pay ?? "لا يوجد"}}</td>
+            <td>{{$order->date ?? "لا يوجد"}}</td>
+            <td>
+                <a href="{{route('delete-service-order' , $order->id)}}" style="background-color: #187bcd;">حذف</a>
+            </td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
+<hr>
+<table cellspacing="0">
+    <caption>
         الاماكن
     </caption>
     <thead>

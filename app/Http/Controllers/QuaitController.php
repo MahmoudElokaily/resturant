@@ -9,6 +9,7 @@ use App\Models\Service;
 use App\Models\ServiceOrder;
 use Illuminate\Http\Request;
 use App\Traits\SaveImage;
+use Illuminate\Support\Facades\Auth;
 
 class QuaitController extends Controller
 {
@@ -40,11 +41,13 @@ class QuaitController extends Controller
         $orders = Order::where('bof' , '!=' , null)->get();
         $service = Service::all();
         $products = Product::all();
+        $serviceOrder = ServiceOrder::all();
         $data = [
             'categories' => $categories,
             'orders'    => $orders,
             'services' => $service,
-            'products' => $products
+            'products' => $products,
+            'serviceOrder' => $serviceOrder
         ];
         return view('dashboard' , $data);
     }
@@ -133,16 +136,40 @@ class QuaitController extends Controller
         return to_route('home');
     }
 
+    public function login(){
+        return view('login');
+    }
+
+    public function enterDashboard(Request $request){
+        $credentials = $request->only('name', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->route('dashboard');
+        }
+        return back()->withErrors(['username' => 'Invalid username or password']);
+    }
+
     public function storeServiceOrder(Request $request){
         $service = ServiceOrder::create([
             'name' => $request->name,
             'price'  => $request->price,
+            'date'  =>  $request->date,
+            'pay'   => $request->pay
         ]);
         return to_route('home');
     }
 
     public function deleteOrder($id){
         $item = Order::findOrFail($id);
+
+        // Delete the item
+        $item->delete();
+
+        return redirect()->back();
+    }
+
+    public function deleteServiceOrder($id){
+        $item = ServiceOrder::findOrFail($id);
 
         // Delete the item
         $item->delete();

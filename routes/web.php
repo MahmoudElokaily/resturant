@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QuaitController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('' , [QuaitController::class , 'index'])->name('home');
 Route::get('category/{id}' , [QuaitController::class , 'category'])->name('category');
-Route::get('dashboard' , [QuaitController::class , 'dashboard'])->name('dashboard');
+Route::get('dashboard' , [QuaitController::class , 'dashboard'])->name('dashboard')->middleware('auth');
 Route::get('details' , [QuaitController::class , 'details'])->name('details');
 Route::Post('store-product' , [QuaitController::class , 'storeProduct'])->name('store-product');
 Route::Post('store-service' , [QuaitController::class , 'storeService'])->name('store-service');
@@ -34,5 +35,14 @@ Route::Post("update-product" , [QuaitController::class , 'updateProduct'])->name
 Route::get("edit-service/{id}" , [QuaitController::class , 'editService'])->name("edit-service");
 Route::Post("update-service/" , [QuaitController::class , 'updateService'])->name("update-service");
 Route::get("details/{id}" , [QuaitController::class , 'details'])->name("details");
+Route::get("delete-service-order/{id}" , [QuaitController::class , 'deleteServiceOrder'])->name("delete-service-order");
+Route::get("login" , [QuaitController::class , 'login'])->name("login");
+Route::get("login" , [QuaitController::class , 'login'])->name("login");
+Route::Post("enter-dashboard" , [QuaitController::class , 'enterDashboard'])->name("enter-dashboard");
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
+})->name('logout');
+
 
 

@@ -11,6 +11,7 @@
                 <li><a href="{{route('category' , $category->id)}}">{{$category->name}}</a></li>
             @endforeach
             <li><a href="{{route('services')}}">الخدمات</a></li>
+            <li><a href="{{route('dashboard')}}">Admin</a></li>
         </ul>
     </div>
 </nav>

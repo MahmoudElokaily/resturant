@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceOrder extends Model
 {
     use HasFactory;
-    protected $fillable = ['name' , 'price' , 'date' , 'pay'];
+    protected $fillable = ['name' , 'price' , 'date' , 'pay' , 'service' , 'number'];
 }

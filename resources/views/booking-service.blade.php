@@ -15,6 +15,7 @@
     <form action="{{route('store-service-order')}}" method="post">
         @csrf
         <input type="text" name="price" value="{{$service->price + ($service->price  * .14)}}" hidden/>
+        <input type="text" name="service" value="{{$service->name}}" hidden/>
         <label for="name">الاسم</label>
         <input type="text" id="name" name="name" placeholder="اسمك" required />
         <label for="number">رقم التواصل</label>

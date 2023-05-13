@@ -38,7 +38,11 @@ Route::get("details/{id}" , [QuaitController::class , 'details'])->name("details
 Route::get("delete-service-order/{id}" , [QuaitController::class , 'deleteServiceOrder'])->name("delete-service-order");
 Route::get("login" , [QuaitController::class , 'login'])->name("login");
 Route::get("login" , [QuaitController::class , 'login'])->name("login");
+Route::get("login" , [QuaitController::class , 'login'])->name("login");
 Route::Post("enter-dashboard" , [QuaitController::class , 'enterDashboard'])->name("enter-dashboard");
+Route::get("edit-category/{id}" , [QuaitController::class , 'editCategory'])->name("edit-category");
+Route::Post("update-category/" , [QuaitController::class , 'updateCategory'])->name("update-category");
+Route::get("delete-category/{id}" , [QuaitController::class , 'deleteCategory'])->name("delete-category");
 Route::get('/logout', function () {
     Auth::logout();
     return redirect('/login');

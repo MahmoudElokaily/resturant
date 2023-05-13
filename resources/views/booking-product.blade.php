@@ -27,11 +27,6 @@
             <option value="visa">فيزا</option>
             <option value="vf">فودافون كاش</option>
         </select>
-        <label for="">البوفيه في حاله حجز مكان</label>
-        <select name="bof">
-            <option value="بوفيه مفتوح">بوفيه مفتوح</option>
-            <option value="وجبات">وجبات</option>
-        </select>
         <p>
             التكلفة شاملة الضافة : {{$product->price + ($product->price  * .14)}}
         </p>

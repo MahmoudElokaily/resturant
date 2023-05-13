@@ -9,7 +9,10 @@
     <title>Document</title>
 </head>
 <body>
-<p>Dashboard</p>
+<p>
+    <a href="{{route('logout')}}">تسجيل الخروج</a>
+    Dashboard
+</p>
 <table cellspacing="0">
     <caption>
         الحجوزات
@@ -19,7 +22,6 @@
         <th>الاسم</th>
         <th>الرقم</th>
         <th>حجز ل </th>
-        <th>البوفيه</th>
         <th>الدفع</th>
         <th>التاريخ</th>
         <th></th>
@@ -31,7 +33,6 @@
             <td>{{$order->name}}</td>
             <td>0{{$order->number}}</td>
             <td>{{$order->place}}</td>
-            <td>{{$order->bof}}</td>
             <td>{{$order->pay}}</td>
             <td>{{$order->date}}</td>
             <td>
@@ -49,7 +50,9 @@
     <thead>
     <tr>
         <th>الاسم</th>
+        <th>الخدمة</th>
         <th>السعر</th>
+        <th>الرقم</th>
         <th>الدفع</th>
         <th>التاريخ</th>
         <th></th>
@@ -59,7 +62,9 @@
     @foreach($serviceOrder as $order)
         <tr>
             <td>{{$order->name}}</td>
-            <td>0{{$order->price}}</td>
+            <td>{{$order->service ?? "لا يوجد"}}</td>
+            <td>{{$order->price}}</td>
+            <td>{{$order->number ?? "لا يوجد"}}</td>
             <td>{{$order->pay ?? "لا يوجد"}}</td>
             <td>{{$order->date ?? "لا يوجد"}}</td>
             <td>
@@ -240,6 +245,30 @@
 <table cellspacing="0">
     <caption>
         الفئات
+    </caption>
+    <thead>
+    <tr>
+        <th>الاسم</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach($categories as $category)
+        <tr>
+            <td>{{$category->name}}</td>
+            <td class="btn">
+                <a href="{{route('delete-category' , $category->id)}}">حذف</a>
+                <a href="{{route('edit-category' , $category->id)}}" class="editBtn">تعديل</a>
+            </td>
+        </tr>
+        </tr>
+
+    @endforeach
+    </tbody>
+</table>
+<table cellspacing="0">
+    <caption>
+        اضافة فئة
     </caption>
     <thead>
     <tr>

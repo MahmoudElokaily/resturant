@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('place');
             $table->date('date')->nullable();
             $table->string('pay');
-            $table->string('bof');
+            $table->string('bof')->nullable();
         });
     }
 

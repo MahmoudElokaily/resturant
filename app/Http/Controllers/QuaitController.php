@@ -38,7 +38,7 @@ class QuaitController extends Controller
 
     public function dashboard() {
         $categories = Category::all();
-        $orders = Order::where('bof' , '!=' , null)->get();
+        $orders = Order::all();
         $service = Service::all();
         $products = Product::all();
         $serviceOrder = ServiceOrder::all();
@@ -152,6 +152,8 @@ class QuaitController extends Controller
     public function storeServiceOrder(Request $request){
         $service = ServiceOrder::create([
             'name' => $request->name,
+            'service' => $request->service,
+            'number'    => $request->number,
             'price'  => $request->price,
             'date'  =>  $request->date,
             'pay'   => $request->pay
@@ -254,5 +256,30 @@ class QuaitController extends Controller
             'product'  => $product,
         ];
         return view('details' , $data);
+    }
+
+    public function editCategory($id){
+        $category = Category::findOrFail($id);
+        $data = [
+            'category'   => $category,
+        ];
+        return view('edit-category' , $data);
+    }
+
+    public function updateCategory(Request $request){
+        $category = Category::findOrFail($request->id);
+        $category->update([
+            'name'  => $request->name,
+        ]);
+        return to_route('dashboard');
+    }
+
+    public function deleteCategory($id){
+        $item = Category::findOrFail($id);
+
+        // Delete the item
+        $item->delete();
+
+        return redirect()->back();
     }
 }

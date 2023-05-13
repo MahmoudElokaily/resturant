@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('price');
             $table->string('place');
-            $table->string('des');
+            $table->text('des');
             $table->string('deyafa');
             $table->string('menWwoman');
             $table->string('capacity');
